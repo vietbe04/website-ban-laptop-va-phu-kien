@@ -1,0 +1,673 @@
+/* OrderDetailView.css - Modern Order Detail Styles */
+
+:root {
+    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --success-gradient: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    --warning-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --info-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    --danger-gradient: linear-gradient(135deg, #eb3349 0%, #f45c43 100%);
+    --secondary-gradient: linear-gradient(135deg, #636363 0%, #a2ab58 100%);
+    --light-bg: #f8f9fa;
+    --border-radius: 12px;
+    --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.order-detail-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+/* Header Styles */
+.order-header-card {
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.order-header-card .card-header {
+    background: var(--primary-gradient);
+    border: none;
+    padding: 2rem;
+    position: relative;
+}
+
+.order-header-card .card-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.3;
+}
+
+.order-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.order-meta {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    position: relative;
+    z-index: 1;
+}
+
+.status-badge {
+    font-size: 1.2rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* Bootstrap Background Colors */
+.bg-primary { background-color: #007bff !important; }
+.bg-success { background-color: #28a745 !important; }
+.bg-warning { background-color: #ffc107 !important; }
+.bg-danger { background-color: #dc3545 !important; }
+.bg-info { background-color: #17a2b8 !important; }
+.bg-secondary { background-color: #6c757d !important; }
+.bg-light { background-color: #f8f9fa !important; }
+.bg-dark { background-color: #343a40 !important; }
+
+/* Status Badge Styles */
+.status-badge.bg-warning {
+    background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%) !important;
+    color: #212529 !important;
+}
+
+.status-badge.bg-success {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%) !important;
+    color: white !important;
+}
+
+.status-badge.bg-info {
+    background: linear-gradient(135deg, #17a2b8 0%, #6f42c1 100%) !important;
+    color: white !important;
+}
+
+.status-badge.bg-danger {
+    background: linear-gradient(135deg, #dc3545 0%, #c82333 100%) !important;
+    color: white !important;
+}
+
+.status-badge.bg-secondary {
+    background: linear-gradient(135deg, #6c757d 0%, #495057 100%) !important;
+    color: white !important;
+}
+
+/* Info Cards */
+.info-card {
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    height: 100%;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.info-card .card-header {
+    background: var(--info-gradient);
+    border: none;
+    padding: 1.5rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.info-card .card-body {
+    padding: 2rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.02);
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.info-item:hover {
+    background: rgba(0, 0, 0, 0.04);
+    transform: translateX(5px);
+}
+
+.info-item:last-child {
+    margin-bottom: 0;
+}
+
+.info-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    flex-shrink: 0;
+    font-size: 1.2rem;
+}
+
+.info-content {
+    flex: 1;
+}
+
+.info-label {
+    font-weight: 600;
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+
+.info-value {
+    font-weight: 500;
+    color: #212529;
+    font-size: 1.1rem;
+}
+
+/* Product Table */
+.products-card {
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+.products-card .card-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 1.25rem 1.5rem;
+    border: none;
+}
+
+.product-table {
+    margin: 0;
+}
+
+.product-table thead th {
+    background: #f8f9fa;
+    color: #495057;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    border: none;
+    padding: 1rem 0.75rem;
+}
+
+.product-table tbody tr {
+    border-bottom: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.product-table tbody tr:hover {
+    background-color: #f8f9fa;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.product-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.product-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid #f8f9fa;
+    transition: transform 0.3s ease;
+}
+
+.product-image:hover {
+    transform: scale(1.05);
+}
+
+.product-name {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.product-variant {
+    font-size: 0.85rem;
+    color: #6c757d;
+    margin-bottom: 0.25rem;
+}
+
+.product-variant i {
+    color: #667eea;
+}
+
+.quantity-badge {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+}
+
+.price-original {
+    text-decoration: line-through;
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+
+.price-sale {
+    color: #e74c3c;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.price-normal {
+    color: #2c3e50;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.product-table tfoot th {
+    background: #f8f9fa;
+    border-top: 2px solid #dee2e6;
+    font-weight: 600;
+    padding: 1rem 0.75rem;
+}
+
+.product-table tfoot tr:last-child th {
+    background: #e9ecef;
+    color: #2c3e50;
+}
+
+/* Summary Section */
+.table tfoot tr {
+    background: #f8f9fa;
+    font-weight: 600;
+}
+
+.table tfoot tr:last-child {
+    background: #e9ecef;
+    font-size: 1.2rem;
+    color: #dc3545;
+}
+
+/* Discount Card */
+.discount-card {
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+}
+
+.discount-card .card-header {
+    background: rgba(255, 255, 255, 0.2);
+    color: #2c3e50;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 1rem 1.5rem;
+    border: none;
+    backdrop-filter: blur(10px);
+}
+
+.discount-alert {
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 12px;
+    color: #2c3e50;
+    font-weight: 500;
+    padding: 1rem;
+    margin: 0;
+    backdrop-filter: blur(10px);
+}
+
+/* Action Buttons */
+.action-buttons {
+    margin-top: 2rem;
+}
+
+.action-buttons .btn {
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+}
+
+.action-buttons .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.action-buttons .btn-outline-secondary {
+    border: 2px solid #6c757d;
+    color: #6c757d;
+}
+
+.action-buttons .btn-outline-secondary:hover {
+    background: #6c757d;
+    color: white;
+}
+
+/* Not Found Card */
+.not-found-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    padding: 4rem 2rem;
+    margin: 2rem 0;
+    border: 1px solid #e9ecef;
+}
+
+.not-found-icon {
+    margin-bottom: 2rem;
+}
+
+.not-found-icon i {
+    font-size: 4rem;
+    color: #ffc107;
+    opacity: 0.8;
+}
+
+.not-found-title {
+    color: #2c3e50;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.not-found-text {
+    color: #6c757d;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+/* Table Responsive */
+@media (max-width: 768px) {
+    .product-table thead {
+        display: none;
+    }
+    
+    .product-table tbody tr {
+        display: block;
+        margin-bottom: 1rem;
+        border: 1px solid #e9ecef;
+        border-radius: 12px;
+        padding: 1rem;
+        background: white;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+    
+    .product-table tbody td {
+        display: block;
+        text-align: right;
+        padding: 0.5rem 0;
+        border: none;
+        position: relative;
+        padding-left: 50%;
+    }
+    
+    .product-table tbody td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 45%;
+        text-align: left;
+        font-weight: 600;
+        color: #495057;
+    }
+    
+    .product-table tbody td[data-label="Hình ảnh"] {
+        text-align: center;
+        padding-left: 0;
+        margin-bottom: 1rem;
+    }
+    
+    .product-table tbody td[data-label="Hình ảnh"]::before {
+        display: none;
+    }
+    
+    .product-table tbody td[data-label="Sản phẩm"] {
+        padding-left: 0;
+        text-align: left;
+        margin-bottom: 1rem;
+    }
+    
+    .product-table tbody td[data-label="Sản phẩm"]::before {
+        display: none;
+    }
+    
+    .product-table tfoot tr {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.75rem 0;
+    }
+    
+    .product-table tfoot th:first-child {
+        text-align: left !important;
+    }
+    
+    .product-table tfoot th:last-child {
+        text-align: right !important;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .order-detail-container {
+        padding: 1rem;
+    }
+    
+    .order-title {
+        font-size: 2rem;
+    }
+    
+    .order-header-card .card-header {
+        padding: 1.5rem;
+    }
+    
+    .info-card .card-body {
+        padding: 1.5rem;
+    }
+    
+    .info-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .info-icon {
+        margin: 0 auto;
+    }
+    
+    .product-table {
+        font-size: 0.9rem;
+    }
+    
+    .product-image {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .action-buttons .btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    
+    .action-buttons .btn:last-child {
+        margin-bottom: 0;
+    }
+    
+    .not-found-card {
+        padding: 3rem 1.5rem;
+    }
+    
+    .not-found-icon i {
+        font-size: 3rem;
+    }
+    
+    .not-found-title {
+        font-size: 1.3rem;
+    }
+    
+    .discount-card .card-header {
+        font-size: 1rem;
+        padding: 0.8rem 1rem;
+    }
+    
+    .discount-alert {
+        font-size: 0.9rem;
+        padding: 0.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .order-title {
+        font-size: 1.8rem;
+    }
+    
+    .order-meta {
+        font-size: 1rem;
+    }
+    
+    .info-card {
+        padding: 1rem;
+    }
+    
+    .info-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .info-icon {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+    
+    .info-label {
+        font-size: 0.9rem;
+    }
+    
+    .info-value {
+        font-size: 1rem;
+    }
+    
+    .products-card .card-header {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+    
+    .product-table {
+        font-size: 0.8rem;
+    }
+    
+    .product-table thead {
+        display: none;
+    }
+    
+    .product-table tbody tr {
+        display: block;
+        margin-bottom: 1rem;
+        border: 1px solid #e9ecef;
+        border-radius: 8px;
+        padding: 1rem;
+    }
+    
+    .product-table tbody td {
+        display: block;
+        text-align: left !important;
+        padding: 0.5rem 0;
+        border: none;
+    }
+    
+    .product-table tbody td:before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: #6c757d;
+        display: inline-block;
+        margin-right: 0.5rem;
+    }
+    
+    .product-name {
+        font-size: 0.9rem;
+    }
+    
+    .product-variant {
+        font-size: 0.75rem;
+    }
+    
+    .price-sale,
+    .price-normal {
+        font-size: 1rem;
+    }
+    
+    .not-found-card {
+        padding: 2rem 1rem;
+    }
+    
+    .not-found-icon i {
+        font-size: 2.5rem;
+    }
+    
+    .not-found-title {
+        font-size: 1.2rem;
+    }
+    
+    .not-found-text {
+        font-size: 1rem;
+    }
+}
+
+/* Animation for status badges */
+@keyframes statusPulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(255, 193, 7, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 193, 7, 0); }
+}
+
+.status-badge.pending {
+    animation: statusPulse 2s infinite;
+}
+
+/* Loading States */
+.loading-skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+    border-radius: 4px;
+}
+
+@keyframes loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
