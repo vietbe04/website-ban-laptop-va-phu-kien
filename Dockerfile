@@ -16,6 +16,13 @@ RUN a2enmod rewrite || true
 # Output enabled modules for debugging (check build logs)
 RUN ls -la /etc/apache2/mods-enabled || true && apachectl -M || true
 
+# Add startup script to ensure a single MPM is enabled at runtime and then start Apache
+COPY docker-start.sh /usr/local/bin/docker-start.sh
+RUN chmod +x /usr/local/bin/docker-start.sh
+
+ENTRYPOINT ["/usr/local/bin/docker-start.sh"]
+CMD ["apache2-foreground"]
+
 # Copy toàn bộ mã nguồn vào thư mục web root của Apache
 COPY . /var/www/html/
 
