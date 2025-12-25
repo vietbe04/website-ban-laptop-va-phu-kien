@@ -32,23 +32,15 @@
 4. Cấu hình kết nối database trong `app/config.php`.
 5. Chạy ứng dụng trên localhost hoặc deploy lên server.
 
-
-## Chức năng chi tiết
-- Quản lý sản phẩm: thêm, sửa, xóa, tìm kiếm, phân loại, quản lý biến thể (màu sắc, cấu hình...)
-- Quản lý loại sản phẩm
-- Quản lý kho, nhập/xuất tồn kho
-- Quản lý nhà cung cấp
-- Quản lý người dùng: đăng ký, đăng nhập, phân quyền (admin, nhân viên, khách hàng), khóa/mở tài khoản
-- Quản lý đơn hàng: đặt hàng, xác nhận, cập nhật trạng thái, in hóa đơn, xem lịch sử mua hàng
-- Quản lý chi tiết đơn hàng
-- Quản lý khuyến mãi, mã giảm giá, chương trình ưu đãi
-- Quản lý đánh giá, bình luận sản phẩm
-- Quản lý bài viết tin tức, bình luận bài viết
-- Quản lý banner, feedback
-- Quản lý wishlist (sản phẩm yêu thích)
-- Chat hỗ trợ khách hàng (real-time giữa khách và admin/nhân viên)
+## Tính năng chính
+- Quản lý sản phẩm, loại sản phẩm, biến thể
+- Quản lý đơn hàng, chi tiết đơn hàng
+- Quản lý người dùng, đăng nhập/đăng ký
+- Quản lý khuyến mãi, mã giảm giá
+- Đánh giá, bình luận sản phẩm
+- Chat hỗ trợ khách hàng
 - Tích hợp thanh toán VNPay
-- Thống kê, báo cáo doanh thu, sản phẩm bán chạy
+- Quản lý kho, nhà cung cấp
 
 
 
