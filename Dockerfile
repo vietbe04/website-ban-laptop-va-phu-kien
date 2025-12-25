@@ -1,14 +1,14 @@
-# Dockerfile for PHP + Apache on Railway
-FROM php:8.2-apache
+# Dockerfile for PHP + Apache (chuẩn, không gây lỗi MPM)
+FROM php:8.3-apache
 
-# Enable Apache mod_rewrite (for pretty URLs)
+# Bật mod_rewrite (chỉ bật module này, không bật MPM khác)
 RUN a2enmod rewrite
 
-# Copy all project files to Apache's web root
+# Copy toàn bộ mã nguồn vào thư mục web root của Apache
 COPY . /var/www/html/
 
-# Set working directory
+# Đặt thư mục làm việc mặc định
 WORKDIR /var/www/html
 
-# Expose port 80 (Railway will use this port)
+# Expose port 80
 EXPOSE 80
