@@ -1,14 +1,18 @@
 <?php
 class DB {
-    private $host='localhost';
-    private $user='root';
-    private $pass='';
-    private $dbname='website';
+    private $host;
+    private $user;
+    private $pass;
+    private $dbname;
     //viết phương thức kết nối csdl
     protected $db;
     public function __construct(){
-        $this->db=$this->Connect();
-    }   
+        $this->host = getenv('DB_HOST') ?: 'localhost';
+        $this->user = getenv('DB_USER') ?: 'root';
+        $this->pass = getenv('DB_PASS') ?: '';
+        $this->dbname = getenv('DB_NAME') ?: 'website';
+        $this->db = $this->Connect();
+    }
     public function Connect(){
         $dsn = 'mysql:host=' . $this->host . ';dbname=' . $this->dbname . ';charset=utf8mb4';
         $options = [
