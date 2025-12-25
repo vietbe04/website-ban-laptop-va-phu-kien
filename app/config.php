@@ -1,5 +1,5 @@
 <?php 
-define("APP_URL", "http://localhost/DQV");
+define("APP_URL", getenv('APP_URL') ?: "http://localhost/DQV");
 // Thiết lập múi giờ Việt Nam cho toàn bộ ứng dụng
 date_default_timezone_set('Asia/Ho_Chi_Minh');
 // Đã chuyển quản lý ngưỡng giảm giá sang cơ sở dữ liệu (bảng order_thresholds).
