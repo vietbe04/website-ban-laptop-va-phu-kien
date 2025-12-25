@@ -1,4 +1,10 @@
 <?php 
+// Cấu hình kết nối MySQL Railway
+// DB_HOST = shinkansen.proxy.rlwy.net
+// DB_USER = root
+// DB_PASS = srHfFNvTybZwsCdqgOvCutAtNxzDtbtxf
+// DB_NAME = railway
+// DB_PORT = 33952
 define("APP_URL", getenv('APP_URL') ?: "http://localhost/DQV");
 // Thiết lập múi giờ Việt Nam cho toàn bộ ứng dụng
 date_default_timezone_set('Asia/Ho_Chi_Minh');
